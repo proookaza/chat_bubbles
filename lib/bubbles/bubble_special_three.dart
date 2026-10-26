@@ -55,6 +55,7 @@ class BubbleSpecialThree extends StatelessWidget {
 
   /// shows a "Forwarded" banner at the top of the bubble when true
   final bool isForwarded;
+  final bool isEncrypted;
 
   /// optional identifier for tracking the message
   final String? messageId;
