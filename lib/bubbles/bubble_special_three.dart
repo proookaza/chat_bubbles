@@ -76,6 +76,7 @@ class BubbleSpecialThree extends StatelessWidget {
     ),
     this.timestamp,
     this.isEdited = false,
+    this.isEncrypted = false,
     this.isForwarded = false,
     this.messageId,
   });
@@ -152,6 +153,7 @@ class BubbleSpecialThree extends StatelessWidget {
                       child: BubbleStatusRow(
                         stateIcon: stateTick ? stateIcon : null,
                         isEdited: isEdited,
+                        isEncrypted: isEncrypted,
                         timestamp: timestamp,
                         textColor: textStyle.color ?? Colors.black87,
                       ),

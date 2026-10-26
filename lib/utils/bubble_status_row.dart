@@ -13,6 +13,8 @@ class BubbleStatusRow extends StatelessWidget {
   /// Whether to show the "Edited" label
   final bool isEdited;
 
+  final bool isEncrypted;
+
   /// Optional timestamp string to display (e.g. "12:34 PM")
   final String? timestamp;
 
@@ -24,6 +26,7 @@ class BubbleStatusRow extends StatelessWidget {
     super.key,
     this.stateIcon,
     this.isEdited = false,
+    this.isEncrypted = false,
     this.timestamp,
     this.textColor = Colors.black54,
   });
@@ -38,7 +41,7 @@ class BubbleStatusRow extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         if (isEdited) ...[
-          Text(
+          /*Text(
             'Edited',
             style: TextStyle(
               fontSize: 11,
@@ -46,7 +49,64 @@ class BubbleStatusRow extends StatelessWidget {
               color: textColor.withValues(alpha: 0.7),
             ),
           ),
-          const SizedBox(width: 4),
+          const SizedBox(width: 4),*/
+          Icon(
+            Icons.edit,
+            color: Colors.white.withValues(alpha: 0.7),
+            size: 12,
+          ),
+          Container(
+              margin: const EdgeInsets.only(
+                left: 3,
+                right: 3,
+                bottom: 2
+              ),
+              child: Text(
+                '|',
+                style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.7),
+                    fontSize: 12
+                ),
+              )
+          )
+        ],
+        if (isEncrypted) ...[
+          Icon(
+            Icons.lock,
+            color: Colors.green.withValues(alpha: 0.7),
+            size: 12,
+          ),
+          Container(
+              margin: const EdgeInsets.only(
+                left: 3,
+                right: 3,
+                bottom: 2
+              ),
+              child: Text(
+                '|',
+                style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.7),
+                    fontSize: 12
+                ),
+              )
+          )
+        ],
+        if (stateIcon != null) ...[
+          stateIcon!,
+          Container(
+              margin: const EdgeInsets.only(
+                left: 3,
+                right: 3,
+                bottom: 2
+              ),
+              child: Text(
+                '|',
+                style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.7),
+                    fontSize: 12
+                ),
+              )
+          )
         ],
         if (timestamp != null) ...[
           Text(
@@ -56,9 +116,8 @@ class BubbleStatusRow extends StatelessWidget {
               color: textColor.withValues(alpha: 0.7),
             ),
           ),
-          if (stateIcon != null) const SizedBox(width: 3),
+          //if (stateIcon != null) const SizedBox(width: 3),
         ],
-        if (stateIcon != null) stateIcon!,
       ],
     );
   }
