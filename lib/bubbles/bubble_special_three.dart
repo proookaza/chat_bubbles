@@ -56,6 +56,7 @@ class BubbleSpecialThree extends StatelessWidget {
   /// shows a "Forwarded" banner at the top of the bubble when true
   final bool isForwarded;
   final bool isEncrypted;
+  final bool isTemporary;
 
   /// optional identifier for tracking the message
   final String? messageId;
@@ -79,6 +80,7 @@ class BubbleSpecialThree extends StatelessWidget {
     this.isEdited = false,
     this.isEncrypted = false,
     this.isForwarded = false,
+    this.isTemporary = false,
     this.messageId,
   });
 
@@ -155,6 +157,7 @@ class BubbleSpecialThree extends StatelessWidget {
                         stateIcon: stateTick ? stateIcon : null,
                         isEdited: isEdited,
                         isEncrypted: isEncrypted,
+                        isTemporary: isTemporary,
                         timestamp: timestamp,
                         textColor: textStyle.color ?? Colors.black87,
                       ),

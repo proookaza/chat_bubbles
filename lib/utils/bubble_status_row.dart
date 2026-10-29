@@ -14,6 +14,7 @@ class BubbleStatusRow extends StatelessWidget {
   final bool isEdited;
 
   final bool isEncrypted;
+  final bool isTemporary;
 
   /// Optional timestamp string to display (e.g. "12:34 PM")
   final String? timestamp;
@@ -27,6 +28,7 @@ class BubbleStatusRow extends StatelessWidget {
     this.stateIcon,
     this.isEdited = false,
     this.isEncrypted = false,
+    this.isTemporary = false,
     this.timestamp,
     this.textColor = Colors.black54,
   });
@@ -53,6 +55,27 @@ class BubbleStatusRow extends StatelessWidget {
           Icon(
             Icons.edit,
             color: Colors.white.withValues(alpha: 0.7),
+            size: 12,
+          ),
+          Container(
+              margin: const EdgeInsets.only(
+                left: 3,
+                right: 3,
+                bottom: 2
+              ),
+              child: Text(
+                '|',
+                style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.7),
+                    fontSize: 12
+                ),
+              )
+          )
+        ],
+        if (isEncrypted) ...[
+          Icon(
+            Icons.timer,
+            color: Colors.red.withValues(alpha: 0.7),
             size: 12,
           ),
           Container(
