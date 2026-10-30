@@ -72,7 +72,7 @@ class BubbleStatusRow extends StatelessWidget {
               )
           )
         ],
-        if (isEncrypted) ...[
+        if (isTemporary) ...[
           Icon(
             Icons.timer,
             color: Colors.red.withValues(alpha: 0.7),
