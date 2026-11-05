@@ -91,26 +91,26 @@ class BubbleSpecialThree extends StatelessWidget {
     Icon? stateIcon;
     if (sent) {
       stateTick = true;
-      stateIcon = const Icon(
+      stateIcon = Icon(
         Icons.done,
-        size: 18,
-        color: Color(0xFF97AD8E),
+        size: 12,
+        color: Colors.white.withValues(alpha: 0.7),
       );
     }
     if (delivered) {
       stateTick = true;
-      stateIcon = const Icon(
+      stateIcon = Icon(
         Icons.done_all,
-        size: 18,
-        color: Color(0xFF97AD8E),
+        size: 12,
+        color: Colors.cyan.withValues(alpha: 0.7),
       );
     }
     if (seen) {
       stateTick = true;
-      stateIcon = const Icon(
+      stateIcon = Icon(
         Icons.done_all,
-        size: 18,
-        color: Color(0xFF92DEDA),
+        size: 12,
+        color: Colors.lime.withValues(alpha: 0.7),
       );
     }
 
