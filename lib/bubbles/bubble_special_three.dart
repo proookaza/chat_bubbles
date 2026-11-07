@@ -102,7 +102,7 @@ class BubbleSpecialThree extends StatelessWidget {
       stateIcon = Icon(
         Icons.done_all,
         size: 12,
-        color: Colors.cyan.withValues(alpha: 0.7),
+        color: Colors.white.withValues(alpha: 0.7),
       );
     }
     if (seen) {
@@ -110,7 +110,7 @@ class BubbleSpecialThree extends StatelessWidget {
       stateIcon = Icon(
         Icons.done_all,
         size: 12,
-        color: Colors.lime.withValues(alpha: 0.7),
+        color: Colors.cyan.withValues(alpha: 0.7),
       );
     }
 

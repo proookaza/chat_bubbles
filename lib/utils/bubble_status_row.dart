@@ -72,6 +72,23 @@ class BubbleStatusRow extends StatelessWidget {
               )
           )
         ],
+        if (stateIcon != null) ...[
+          stateIcon!,
+          Container(
+              margin: const EdgeInsets.only(
+                left: 3,
+                right: 3,
+                bottom: 2
+              ),
+              child: Text(
+                '|',
+                style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.7),
+                    fontSize: 12
+                ),
+              )
+          )
+        ],
         if (isTemporary) ...[
           Icon(
             Icons.timer,
@@ -99,23 +116,6 @@ class BubbleStatusRow extends StatelessWidget {
             color: Colors.green.withValues(alpha: 0.7),
             size: 12,
           ),
-          Container(
-              margin: const EdgeInsets.only(
-                left: 3,
-                right: 3,
-                bottom: 2
-              ),
-              child: Text(
-                '|',
-                style: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.7),
-                    fontSize: 12
-                ),
-              )
-          )
-        ],
-        if (stateIcon != null) ...[
-          stateIcon!,
           Container(
               margin: const EdgeInsets.only(
                 left: 3,
